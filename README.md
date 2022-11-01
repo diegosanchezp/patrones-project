@@ -22,3 +22,5 @@ docker-compose up -d postgres
 ```bash
 mvn spring-boot:run
 ```
+
+Visit `http://localhost:8080`
