@@ -22,7 +22,6 @@ public class CasoInvestigacionController {
 	public List<CasoInvestigacion> getAll() {
 		return casoInvestigacionService.getAllCasoInvestigacion();
 	}*/
-
 	//@GetMapping
 	@GetMapping("/{id}/investigador")
 	public Investigador getInvestigadorByCaso (@PathVariable Long id) {
