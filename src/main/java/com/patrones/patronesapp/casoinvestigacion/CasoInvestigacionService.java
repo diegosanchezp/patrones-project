@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.patrones.patronesapp.auth.Investigador;
 
 @Service
 public class CasoInvestigacionService {
@@ -17,7 +18,11 @@ public class CasoInvestigacionService {
 	public List<CasoInvestigacion> getAllCasoInvestigacion() {
 		return (List<CasoInvestigacion>) this.casoInvestigacionRepository.findAll();
 	}
-	
+	@Transactional
+	public Investigador getInvestigador(Long id) {
+		return this.casoInvestigacionRepository.findById(id).get().getInvestigador(); 
+	}
+
 	/*@Transactional
 	public List<CasoInvestigacion> findByDescripcion(String descripcion) {
 		return this.casoInvestigacionRepository.findByDescripcion(descripcion);

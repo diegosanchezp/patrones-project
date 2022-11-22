@@ -22,7 +22,7 @@ public class PatronesappApplication {
 			.httpBasic()
 		.and()
 			.authorizeRequests()
-			.antMatchers("/casos", "/").permitAll()
+			.antMatchers("/**", "/**").permitAll()
 			.anyRequest().authenticated();
 		}
   	}

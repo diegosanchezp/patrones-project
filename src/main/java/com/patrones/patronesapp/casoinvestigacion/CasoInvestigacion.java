@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Entity;
+import javax.persistence.*; 
+import com.patrones.patronesapp.auth.Investigador;
 
 @Entity
 @Table(name = "caso_investigacion")
@@ -16,9 +18,10 @@ class CasoInvestigacion {
 
 	@Column(name="descripcion")
 	private String descripcion;
-
-	//@Column(name="status")
-	//private Integer status;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "investigador_id", referencedColumnName = "id")
+    private Investigador investigador;
 
 	public CasoInvestigacion(){
 	}
@@ -27,5 +30,12 @@ class CasoInvestigacion {
 	}
 	public void setDescripcion(String descripcion){
 		this.descripcion = descripcion;
+	}
+
+	public Investigador getInvestigador(){
+		return this.investigador;
+	}
+	public void setInvestigador(Investigador investigador){
+		this.investigador = investigador;
 	}
 }
