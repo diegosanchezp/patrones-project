@@ -1,24 +1,24 @@
-package com.patrones.patronesapp.auth;
+package com.patrones.patronesapp.reportes;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import javax.persistence.Entity;
 
 import lombok.*;
 
 @Entity
-@Table(name = "investigador")
-@Getter @Setter
-public class Investigador extends Usuario {
+@Table(name = "archivo")
+@Getter @Setter 
+public class Archivo {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-    public Investigador(){
+    public Archivo(){}
 
-    }
-	@Column(name="soy_investigador")
-	private Boolean soyInvestigador;
+    @Column(name="negado")
+    private Boolean negado;
 }

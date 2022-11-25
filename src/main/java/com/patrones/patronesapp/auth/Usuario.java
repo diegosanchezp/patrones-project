@@ -10,15 +10,20 @@ import javax.persistence.Entity;
 import lombok.*;
 
 @Entity
-@Table(name = "investigador")
-@Getter @Setter
-public class Investigador extends Usuario {
+@Table(name = "usuario")
+@Getter @Setter 
+public class Usuario {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-    public Investigador(){
+    public Usuario(){}
 
-    }
-	@Column(name="soy_investigador")
-	private Boolean soyInvestigador;
+	@Column(name="nombre")
+	private String nombre;
+
+    @Column(name="contrasena")
+	private String contrasena;
+
+    @Column(name="email")
+	private String email;
 }
